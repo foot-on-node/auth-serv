@@ -2,12 +2,11 @@ version: '3'
 services:
   web:
     image: docker-auth-server
-    build: ./
+    build: .
     ports:
       - "8080:8080"
     volumes:
-      - ./web-site:/usr/src/app/web-site
-      - ./node_modules:/usr/src/app/node_modules
+      - ./:/auth-server
     links:
       - mongodb:mongo
   mongodb:
@@ -15,3 +14,4 @@ services:
     restart: always
     ports:
       - "27017:27017"
+      

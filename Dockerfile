@@ -1,10 +1,10 @@
 FROM node:10.15.0
 
-WORKDIR /usr/src/app/web-site
-
-RUN npm install
+WORKDIR /auth-server
 
 COPY . .
+
+RUN npm install
 
 EXPOSE 8080
 
